@@ -32,7 +32,6 @@ const App = () => {
     const end = endDate ? parseISO(endDate) : null;
 
     const start = parseISO(startDate); 
-    console.log(start);
 
     let count = 0;
 
@@ -41,10 +40,14 @@ const App = () => {
       if (!isValid(current)) break;
 
       switch (recurrenceType) {
-        case 'daily':
-          result.push(format(current, 'yyyy-MM-dd'));
-          current = addDays(current, interval);
-          break;
+         case 'Daily': {
+      
+      
+
+      result.push(format(current, 'yyyy-MM-dd'));
+      current = addDays(current, interval); 
+      break;
+    }
 
         case 'weekly': {
   if (!selectedDays || selectedDays.length === 0) break;
